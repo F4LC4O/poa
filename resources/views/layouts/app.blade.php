@@ -19,10 +19,11 @@
         <!-- CSS
         ================================================== -->       
         <link rel="stylesheet" href="{{ asset('css/bootstrap-4.0.0.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Fonts and icons -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <!-- Full Calendar -->
-        <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />     
+        <link rel='stylesheet' href="{{ asset('fullcalendar/fullcalendar.css') }}" />
 
     </head>
     <body>
