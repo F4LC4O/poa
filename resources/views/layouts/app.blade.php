@@ -14,7 +14,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('titulo')</title>        
+        <title>@yield('titulo') - Meia-boca-teste</title>        
         
         <!-- CSS
         ================================================== -->       
