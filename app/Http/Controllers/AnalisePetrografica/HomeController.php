@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AnalisePetrografica;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\AnalisePetrografica\Projeto;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('analisepetrografica.index');
+        $projetos = Projeto::get();
+
+        return view('analisepetrografica.index', compact('projetos'));
     }
 
     /**
@@ -24,7 +27,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('analisepetrografica.create');
     }
 
     /**

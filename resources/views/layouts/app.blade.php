@@ -24,6 +24,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <!-- Full Calendar -->
         <link rel='stylesheet' href="{{ asset('fullcalendar/fullcalendar.css') }}" />
+        <!-- Datatable -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/datatables.min.css') }}"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 
     </head>
     <body>
@@ -47,10 +50,15 @@
                     </ul>
                 </div>
             </nav>
+            
+             @yield('content')
         </div> 
 
-        @yield('content')
-        
+        <!--   Core JS Files   -->
+        <script src="{{ asset('js/core/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/core/popper.min.js') }}"></script>
+        <script src="{{ asset('js/core/bootstrap.min.js') }}"></script>
+
         @yield('scripts')
         
     </body>

@@ -6,3 +6,46 @@
   max-width: 900px;
   margin: 0 auto;
 }
+
+.card {
+  border: 0;
+  border-radius: 0.1875rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+}
+
+.card .card-body {
+  padding: 15px 15px 10px 15px;
+}
+
+.card .card-body.table-full-width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card .card-header {
+  text-align: center;
+  padding: 15px 15px 0;
+  border: 0;
+}
+
+.card .card-header:not([data-background-color]) {
+  background-color: transparent;
+}
+
+.card .card-header .card-title {
+  margin-top: 10px;
+}
+
+.form-control {
+  border-radius: 30px !important;
+}
+
+@media (min-width: 480px) {
+  .formLeft {
+      padding-left: 0px !important; 
+  }
+}
