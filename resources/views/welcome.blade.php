@@ -82,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel - Vernon Teste 2
+                    Laravel - Vernon Teste 3
                 </div>
 
                 <div class="links">
