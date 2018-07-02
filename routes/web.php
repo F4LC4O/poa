@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('videoconferencia.index');
+Route::get('/', function(){
+    return view('home');
 });
+
+// VideoConferência
+Route::get('/videoconferencia', 'VideoConferencia\HomeController@index');
+
+// Análise Petrográfica
+Route::get('/analisepetro', 'AnalisePetrografica\HomeController@index');
