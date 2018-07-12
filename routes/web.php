@@ -20,3 +20,6 @@ Route::get('/videoconferencia', 'VideoConferencia\HomeController@index');
 
 // Análise Petrográfica
 Route::get('/analisepetro', 'AnalisePetrografica\HomeController@index');
+
+//Requisições de laboratório
+Route::resource('/reqlab', 'Reqlab\ReqlabController');
