@@ -3,7 +3,7 @@
 
 @section('content')
 
-{!! Form::open(['url' => 'analisepetro/store']) !!}
+{!! Form::open(['url' => 'analisepetro/store', 'autocomplete' => 'off']) !!}
 <div class="content">
   <div class="row">
     <div class="offset-sm-2 col-md-8">
@@ -46,7 +46,8 @@
   </div>
   <div class="row">
     <div class="offset-sm-2 col-md-8">
-      <button type="button" class="btn btn-primary">Criar</button>
+      <a href="{{ route('analisepetro.index') }}" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Voltar</a>
+      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Cadastrar</button>
     </div>
   </div>
 </div>
