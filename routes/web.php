@@ -19,4 +19,7 @@ Route::get('/', function(){
 Route::get('/videoconferencia', 'VideoConferencia\HomeController@index');
 
 // Análise Petrográfica
-Route::resource('/analisepetro', 'AnalisePetrografica\HomeController');
+Route::get('/analisepetro', 'AnalisePetrografica\HomeController@index');
+
+//Requisições de laboratório
+Route::resource('/reqlab', 'Reqlab\ReqlabController');
