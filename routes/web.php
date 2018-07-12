@@ -18,8 +18,11 @@ Route::get('/', function(){
 // VideoConferência
 Route::get('/videoconferencia', 'VideoConferencia\HomeController@index');
 
+// Projetos do aflora
+Route::resource('/aflora', 'Aflora\HomeController');
+
 // Análise Petrográfica
-Route::get('/analisepetro', 'AnalisePetrografica\HomeController@index');
+Route::resource('/analisepetro', 'AnalisePetrografica\HomeController');
 
 //Requisições de laboratório
 Route::resource('/reqlab', 'Reqlab\ReqlabController');
