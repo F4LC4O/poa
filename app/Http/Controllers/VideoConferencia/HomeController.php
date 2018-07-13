@@ -26,6 +26,25 @@ class HomeController extends Controller
     {
         //
     }
+    /*    
+    Faz a carga dos dados do banco de dados e joga para a tabela da agenda.
+    */
+    public function carregarDados ( )
+    {
+        /*
+         array vindo do banco com a linha de toda a tabela reunião. Array ={id, link, horario, assunto}
+         tratamento dos dados para compor uma matriz
+         
+         */
+        $array = array ( array() );
+
+        //return ( $array );
+
+        //envia as informações recebidas para a view principal 'videoconferencia.index'
+        return view('videoconferencia.index', $array );
+
+
+    }
 
     /**
      * Store a newly created resource in storage.
