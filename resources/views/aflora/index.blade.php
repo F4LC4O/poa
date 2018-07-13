@@ -20,8 +20,9 @@
         @foreach ($projetos as $projeto)                    
         <tr>
             <td>{{ $projeto->nome }}</td>
-            <a href="{{ route('projeto.edit', ['id' => $projeto->id]) }}" class="actions"><i class="fa fa-edit"></i></a>
-            <a href="{{ url('/analisepetro/delete', ['id' => $projeto->id]) }}" onclick="return confirm('Tem certeza de que deseja excluir essa análise petrográfica?')" class="actions"><i class="fa fa-trash"></i></a>
+            <td>
+            <a href="{{ route('aflora.edit', ['id' => $projeto->id]) }}" class="actions"><i class="fa fa-edit"></i></a>
+            <a href="{{ url('/aflora/delete', ['id' => $projeto->id]) }}" onclick="return confirm('Tem certeza de que deseja excluir essa análise petrográfica?')" class="actions"><i class="fa fa-trash"></i></a>
             </td>
         </tr>
         @endforeach

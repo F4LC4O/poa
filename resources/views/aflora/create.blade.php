@@ -1,84 +1,91 @@
-@extends('layouts/sidebar')
-@section('titulo') Nova Análise @endsection
-
-@section('menus')
-    <li class="nav-item">
-        <a class="nav-link pl-0 text-nowrap" href="#"><i class="fa fa-list fa-fw"></i> <span class="font-weight-bold">Planilha de campo</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-gem fa-fw"></i> <span class="d-none d-md-inline">Litologia</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-gem fa-fw"></i> <span class="d-none d-md-inline">Amostras</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Estrutural</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Econômica</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Petrografia</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Relação de Amostras</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Litoquímica</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link pl-0" href="#"><i class="fa fa-list fa-fw"></i> <span class="d-none d-md-inline">Número de Laboratório</span></a>
-    </li>
-@endsection
+@extends('layouts/app')
+@section('titulo') Novo Projeto @endsection
 
 @section('content')
 
-{!! Form::open(['url' => 'analisepetro/store', 'autocomplete' => 'off']) !!}
-<div class="content">
-  <div class="row">
-    <div class="offset-sm-2 col-md-8">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="title">Novo Projeto</h3>
+{!! Form::open(['route' => ['aflora.store'], 'autocomplete' => 'off']) !!}
+<div class="row">
+  <div class="offset-md-3 col-md-7">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="title">Novo Projeto</h3>
+      </div>
+      <div class="card-body"> 
+        <div class="row">
+          <div class="col-md-12">
+            <label>Nome:</label>
+            <div class="form-group">
+              {!! Form::text('nome', !empty($projeto) ? $projeto->nome : null, ['id' => 'nome', 'class' => ($errors->has('nome') ? 'is-invalid ' : ''). 'form-control']) !!}   
+              @foreach ($errors->get('nome') as $message)                                
+              <div class="invalid-feedback">
+                  {{ $message }}
+              </div>
+              @endforeach
+            </div>
+          </div>            
         </div>
-        <div class="card-body"> 
-          <div class="row">
-            <div class="col-md-12">
-              <label>Nome do projeto:</label>
-              <div class="form-group">
-                <input type="text" class="form-control" id="nome" name="nome">
-              </div>
-            </div>            
+        <div class="row">
+          <div class="col-md-3">
+            <label>Sigla:</label>
+            <div class="form-group">
+            {!! Form::text('sigla', !empty($projeto) ? $projeto->sigla : null, ['id' => 'sigla', 'class' => ($errors->has('sigla') ? 'is-invalid ' : ''). 'form-control']) !!}   
+            @foreach ($errors->get('sigla') as $message)                                
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @endforeach
+            </div>
           </div>
-          <div class="row">            
-            <div class="col-md-3">
-              <label>Centro de custo:</label>
-              <div class="form-group">
-                <input type="text" class="form-control" id="centroCusto" name="centroCusto">
-              </div>
+          <div class="col-md-3 formLeft">
+            <label>Centro de custo:</label>
+            <div class="form-group">
+            {!! Form::text('centroCusto', !empty($projeto) ? $projeto->centroCusto : null, ['id' => 'centroCusto', 'class' => ($errors->has('centroCusto') ? 'is-invalid ' : ''). 'form-control']) !!}   
+            @foreach ($errors->get('centroCusto') as $message)                                
+            <div class="invalid-feedback">
+                {{ $message }}
             </div>
-            <div class="col-md-3 formLeft">
-              <label>Amostra:</label>
-              <div class="form-group">
-                <input type="text" class="form-control" id="amostra" name="amostra">
-              </div>
+            @endforeach
             </div>
-            <div class="col-md-3 formLeft">
-              <label>Data:</label>
+          </div>
+          <div class="col-md-5 formLeft">
+              <label>Sureg:</label>
               <div class="form-group">
-                <input type="text" class="form-control" id="data" name="data">
+                  {!! Form::select('sureg', $suregs, !empty($cliente) ? $cliente->sureg : null, ['class' => 'form-control', 'placeholder' => '-- Sureg --']) !!}
               </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label>Data de início:</label>
+            <div class="form-group">
+              {!! Form::text('dataInicio', !empty($cliente) ? $cliente->dataInicio : null, ['id' => 'dataInicio', 'class' => ($errors->has('dataInicio') ? 'is-invalid ' : ''). 'form-control data']) !!}
+              @foreach ($errors->get('dataInicio') as $message)                                
+              <div class="invalid-feedback">
+                  {{ $message }}
+              </div>
+              @endforeach
+            </div>
+          </div>
+          <div class="col-md-4 formLeft">
+            <label>Data de conclusão:</label>
+            <div class="form-group">
+              {!! Form::text('dataConclusao', !empty($cliente) ? $cliente->dataConclusao : null, ['id' => 'dataConclusao', 'class' => ($errors->has('dataConclusao') ? 'is-invalid ' : ''). 'form-control data']) !!}
+              @foreach ($errors->get('dataConclusao') as $message)                                
+              <div class="invalid-feedback">
+                  {{ $message }}
+              </div>
+              @endforeach
             </div>
           </div>
         </div>
       </div>
-    </div>    
-  </div>
-  <div class="row">
-    <div class="offset-sm-2 col-md-8">
-      <a href="{{ route('aflora.index') }}" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Voltar</a>
-      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Cadastrar</button>
     </div>
+  </div>    
+</div>
+<div class="row">
+  <div class="offset-md-3 col-md-7">
+    <a href="{{ route('aflora.index') }}" class="btn btn-info btn-sm"><i class="fa fa-arrow-left"></i> Voltar</a>
+    {!! Form::button('<i class="fa fa-check"></i> Cadastrar', ['type' => 'submit', 'class' => 'btn btn-primary btn-sm']) !!}
   </div>
 </div>
 {!! Form::close() !!}
@@ -97,7 +104,7 @@
 <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 
 <script type="text/javascript">
-        $('#data').datepicker();
+        $('.data').datepicker();
         $.datepicker.setDefaults({
             showAnim: "clip",
             changeMonth: true,
@@ -107,7 +114,7 @@
 
         $(document).ready(function() {
             // ---- Masks -----
-            $("#data").mask('00/00/0000');
+            $(".data").mask('00/00/0000');
         });
 </script>
 

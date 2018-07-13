@@ -40,13 +40,13 @@
                 <li class="nav-item {{ (Request::is('/') ? 'active' : '') }}">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {{ (Request::is('videoconferencia') ? 'active' : '') }}">
+                <li class="nav-item {{ (Request::is('videoconferencia*') ? 'active' : '') }}">
                     <a class="nav-link" href="/videoconferencia">Videoconferência</a>
                 </li>
-                <li class="nav-item {{ (Request::is('aflora') ? 'active' : '') }}">
+                <li class="nav-item {{ (Request::is('aflora*') ? 'active' : '') }}">
                     <a class="nav-link" href="/aflora">Aflora</a>
                 </li>
-                <li class="nav-item {{ (Request::is('analisepetro') ? 'active' : '') }}">
+                <li class="nav-item {{ (Request::is('analisepetro*') ? 'active' : '') }}">
                     <a class="nav-link" href="/analisepetro">Análise Petrográfica</a>
                 </li>
             </ul>

@@ -19,6 +19,9 @@ Route::get('/', function(){
 Route::get('/videoconferencia', 'VideoConferencia\HomeController@index');
 
 // Projetos do aflora
+Route::prefix('aflora')->group(function () {
+    Route::resource('/campo', 'Aflora\CampoController');
+});
 Route::resource('/aflora', 'Aflora\HomeController');
 
 // Análise Petrográfica
