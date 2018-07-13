@@ -28,6 +28,15 @@
         navLinks: true, // can click day/week names to navigate views
         eventLimit: true, // allow "more" link when too many events
         events: [
+    //carrega os dados recebidos do controlador HomeController.php, em videoconferencia
+           {{   foreach ($array as $row) :}}
+                {
+                    id: $row ['id'],
+                    assunto: $row ['assunto'],
+                    inicio: $row ['inicio']
+                },
+            {{  endforeach; }}
+            /*
             {
             title: 'All Day Event',
             start: '2018-06-20'
@@ -82,6 +91,7 @@
             url: 'http://google.com/',
             start: '2018-06-28'
             }
+            */
         ]
     });
 </script>
