@@ -13,7 +13,7 @@ class CreateReuniaoModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reuniao_models', function (Blueprint $table) {
+        Schema::connection('mysql')->create('reuniao_models', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });

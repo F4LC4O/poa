@@ -54,6 +54,21 @@ return [
             'engine' => null,
         ],
 
+        'mysql_petro' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_PETRO', '127.0.0.1'),
+            'port' => env('DB_PORT_PETRO', '3306'),
+            'database' => env('DB_DATABASE_PETRO', 'forge'),
+            'username' => env('DB_USERNAME_PETRO', 'forge'),
+            'password' => env('DB_PASSWORD_PETRO', ''),
+            'unix_socket' => env('DB_SOCKET_PETRO', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

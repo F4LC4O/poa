@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\AnalisePetrografica;
+namespace App\Http\Controllers\Aflora;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\AnalisePetrografica\Projeto;
+use App\Models\Aflora\ProjetoAflora;
 
 class HomeController extends Controller
 {
@@ -15,9 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projetos = Projeto::get();
+        $projetos = ProjetoAflora::get();
 
-        return view('analisepetrografica.index', compact('projetos'));
+        return view('aflora.index', compact('projetos'));
     }
 
     /**
@@ -27,7 +27,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        return view('analisepetrografica.create');
+        return view('aflora.create');
     }
 
     /**

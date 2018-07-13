@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\AnalisePetrografica;
+namespace App\Http\Controllers\reqlab;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\AnalisePetrografica\Projeto;
 
-class HomeController extends Controller
+use App\Models\reqlab\ReqRequisicao;
+use App\Models\reqlab\ReqMaterial;
+use App\Models\reqlab\ReqPetrografia;
+use App\Models\reqlab\ReqGeoquimica;
+use App\Models\reqlab\ReqFinalidade;
+
+class ReqlabController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +20,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projetos = Projeto::get();
-
-        return view('analisepetrografica.index', compact('projetos'));
+        
+        return view('reqlab/index');
     }
 
     /**
@@ -27,7 +31,11 @@ class HomeController extends Controller
      */
     public function create()
     {
-        return view('analisepetrografica.create');
+        $materials = ReqMaterial::all();
+        $petrografias = ReqPetrografia::all();
+        $geoquimicas = ReqGeoquimica::all();
+        $finalidades = ReqFinalidade::all();
+        return view('reqlab/cadastrar',  compact('materials', 'petrografias', 'geoquimicas', 'finalidades'));
     }
 
     /**
@@ -36,9 +44,16 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, ReqRequisicao $requisicao)
     {
-        //
+        $dados = $request->all();
+        $inseriu = $requisicao->create($dados);
+
+        if($inseriu){
+            return "sucesso";
+        } else{
+            return "falha";
+        }
     }
 
     /**
