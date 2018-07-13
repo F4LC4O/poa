@@ -9,7 +9,7 @@
         <br>
 
         <label>Centro de custo</label>
-        <input type="text" name="centro_custo" placeholder="Nome do projeto">
+        <input type="text" name="centro_custo" placeholder="Centro de custo">
         <br>
 
         <label>Material</label>
