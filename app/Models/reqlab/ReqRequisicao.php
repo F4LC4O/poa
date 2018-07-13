@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReqRequisicao extends Model
 {
+    protected $connection = 'mysql_petro';
     protected $fillable = [
         'nome_projeto',
         'centro_custo',

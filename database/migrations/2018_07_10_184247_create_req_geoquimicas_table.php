@@ -13,7 +13,7 @@ class CreateReqGeoquimicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('req_geoquimicas', function (Blueprint $table) {
+        Schema::connection('mysql_petro')->create('req_geoquimicas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome_geoquimica',150);
             $table->timestamps();

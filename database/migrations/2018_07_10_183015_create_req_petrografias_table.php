@@ -13,7 +13,7 @@ class CreateReqPetrografiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('req_petrografias', function (Blueprint $table) {
+        Schema::connection('mysql_petro')->create('req_petrografias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome_petrografia',150);
             $table->timestamps();

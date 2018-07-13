@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReqFinalidade extends Model
 {
-    //
+    protected $connection = 'mysql_petro';
 }

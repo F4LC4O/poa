@@ -13,7 +13,7 @@ class CreateReqAmostrasTable extends Migration
      */
     public function up()
     {
-        Schema::create('req_amostras', function (Blueprint $table) {
+        Schema::connection('mysql_petro')->create('req_amostras', function (Blueprint $table) {
             $table->string('numero', 150);
             $table->string('numero_campo',150);
             $table->date('data_coleta');

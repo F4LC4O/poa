@@ -13,7 +13,7 @@ class CreateReqRequisicaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('req_requisicaos', function (Blueprint $table) {
+        Schema::connection('mysql_petro')->create('req_requisicaos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome_projeto', 150);
             $table->string('centro_custo', 150);
