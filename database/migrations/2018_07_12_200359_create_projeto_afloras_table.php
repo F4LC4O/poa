@@ -16,6 +16,12 @@ class CreateProjetoAflorasTable extends Migration
         Schema::create('projeto_afloras', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->string('sigla')->nullable();
+            $table->integer('centro_custo')->nullable();
+            $table->date('data_inicio')->nullable();
+            $table->date('data_conclusao')->nullable();
+            $table->integer('sureg_id')->unsigned()->nullable();
+            //$table->foreign('sureg_id')->references('id')->on('suregs')->onDelete('cascade');
             $table->timestamps();
         });
     }
