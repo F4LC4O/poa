@@ -30,4 +30,8 @@ class ReqRequisicao extends Model
     public function finalidades(){
         return $this->belongsTo('App\Models\reqlab\ReqFinalidade', 'fk_finalidade');
     }
+
+    public function amostras(){
+        return $this->hasMany('App\Models\reqlab\ReqAmostra', 'fk_requisicao');
+    }
 }

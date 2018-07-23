@@ -1,7 +1,7 @@
 @extends('layouts/reqlayout')
 
 @section('conteudo')
-
+    <?php //echo $req->amostras; ?>
     <h1>Requisição número {{$req->id}}</h1>
      
     <table border=1>
@@ -44,7 +44,7 @@
             <th>Data do lote</th>        
             <th>Litotipo</th>        
         </tr>
-        @foreach($amo as $a)
+        @foreach($req->amostras as $a)
             <tr>    
                 <td>{{$a->numero}}</td>
                 <td>{{$a->numero_campo}}</td>

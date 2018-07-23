@@ -92,7 +92,7 @@ class ReqlabController extends Controller
 
         if($inseriu)
         {
-            return view('reqlab/index');
+            return redirect()->route('reqlab.index');
         } else{
             return "falha";
         }
@@ -107,9 +107,7 @@ class ReqlabController extends Controller
     public function show($id)
     {
         $req = ReqRequisicao::find($id);
-        
-        $amo = ReqAmostra::where('fk_requisicao', $id)->get();
-        return view('reqlab/mostrar', compact('req', 'amo'));
+        return view('reqlab/mostrar', compact('req'));
     }
 
     /**
