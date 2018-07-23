@@ -14,6 +14,20 @@
             <th>Geoquímica</th>
             <th>Finalidade</th>
         </tr>
+        @foreach($requisicoes as $req)
+            <tr>
+                <td>
+                    <a href = {{route('reqlab.show', ['id' => $req->id])}}>
+                       {{$req->nome_projeto}}
+                    </a>
+                </td>
+                <td>{{$req->centro_custo}}</td>
+                <td>{{$req->materials->nome_material}}</td>
+                <td>{{$req->petrografias->nome_petrografia}}</td>
+                <td>{{$req->geoquimicas->nome_geoquimica}}</td>
+                <td>{{$req->finalidades->nome_finalidade}}</td>
+            </tr>
+        @endforeach
     </table>
 
     <a href={{route('reqlab.create')}}>Cadastrar</a>

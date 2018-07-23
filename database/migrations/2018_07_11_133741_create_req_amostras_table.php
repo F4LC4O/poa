@@ -12,8 +12,8 @@ class CreateReqAmostrasTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::connection('mysql_petro')->create('req_amostras', function (Blueprint $table) {
+    {//::connection('mysql_petro')->
+        Schema::create('req_amostras', function (Blueprint $table) {
             $table->string('numero', 150);
             $table->string('numero_campo',150);
             $table->date('data_coleta');
@@ -21,9 +21,13 @@ class CreateReqAmostrasTable extends Migration
             $table->double('longitude');
             $table->string('numero_laboratorio',150);
             $table->string('numero_lote',150);
+            $table->date('data_lote');
             
             $table->integer('fk_litotipo')->unsigned();
             $table->foreign('fk_litotipo')->references('id')->on('req_litotipos');
+
+            $table->integer('fk_requisicao')->unsigned();
+            $table->foreign('fk_requisicao')->references('id')->on('req_requisicaos');
             
             $table->increments('id');
             $table->timestamps();

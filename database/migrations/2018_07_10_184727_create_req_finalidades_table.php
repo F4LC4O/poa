@@ -13,7 +13,7 @@ class CreateReqFinalidadesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql_petro')->create('req_finalidades', function (Blueprint $table) {
+        Schema::create('req_finalidades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome_finalidade',150);
             $table->timestamps();

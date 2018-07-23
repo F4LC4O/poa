@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReqAmostra extends Model
 {
-    protected $connection = 'mysql_petro';
+    public function requisicaos(){
+        return $this->belongsTo('App\Models\reqlab\ReqRequisicao', 'fk_requisicao');
+    }
+
+    public function litotipos(){
+        return $this->belongsTo('App\Models\reqlab\ReqLitotipo', 'fk_litotipo');
+    }
 }

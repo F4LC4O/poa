@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReqRequisicao extends Model
 {
-    protected $connection = 'mysql_petro';
     protected $fillable = [
         'nome_projeto',
         'centro_custo',
@@ -17,18 +16,18 @@ class ReqRequisicao extends Model
     ];
 
     public function materials(){
-        return $this->hasOne('App\Models\ReqMaterial');
+        return $this->belongsTo('App\Models\reqlab\ReqMaterial', 'fk_material');
     }
 
     public function petrografias(){
-        return $this->hasOne('App\Models\ReqPetrografia');
+        return $this->belongsTo('App\Models\reqlab\ReqPetrografia', 'fk_petrografia');
     }
 
     public function geoquimicas(){
-        return $this->hasOne('App\Models\ReqGeoquimica');
+        return $this->belongsTo('App\Models\reqlab\ReqGeoquimica', 'fk_geoquimica');
     }
 
     public function finalidades(){
-        return $this->hasOne('App\Models\ReqFinalidade');
+        return $this->belongsTo('App\Models\reqlab\ReqFinalidade', 'fk_finalidade');
     }
 }

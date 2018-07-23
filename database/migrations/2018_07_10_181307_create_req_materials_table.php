@@ -13,7 +13,7 @@ class CreateReqMaterialsTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql_petro')->create('req_materials', function (Blueprint $table) {
+        Schema::create('req_materials', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome_material', 150);
             $table->timestamps();

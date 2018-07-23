@@ -13,7 +13,7 @@ class CreateReqLitotiposTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql_petro')->create('req_litotipos', function (Blueprint $table) {
+        Schema::create('req_litotipos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome_litotipo', 150);
             $table->timestamps();
